@@ -3,3 +3,8 @@
 /workspace.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+/misc.xml
+/modules.xml
+/nu-group-project.iml
+/inspectionProfiles/profiles_settings.xml
+/vcs.xml
