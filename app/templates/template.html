@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}NU Group Project{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/example.css') }}">
 </head>
 <body>
-    {% block content %}{% endblock %}
-    <script src="{{ url_for('static', filename='js/example.js') }}"></script>
+    <main class="container py-4">
+        {% block content %}{% endblock %}
+    </main>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/example.js') }}"></script>
+    {% block scripts %}{% endblock %}
 </body>
 </html>
