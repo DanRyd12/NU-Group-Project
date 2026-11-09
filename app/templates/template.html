@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}NU Group Project{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/example.css') }}">
 </head>
 <body>
-
+    {% block content %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/example.js') }}"></script>
 </body>
 </html>
