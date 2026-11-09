@@ -7,8 +7,8 @@ Requires Python 3.12+ (3.13 recommended).
 
 ```bash
 python3.13 -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -e ".[dev]"
+source .venv\Scripts\activate    # Linux: .venv/bin/activate 
+pip install -e ".[dev]"          # If you're getting errors it could be down to pip not being in your PATH.
 flask --app wsgi run --debug
 ```
 
