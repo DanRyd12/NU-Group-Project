@@ -1,6 +1,9 @@
 {% extends "template.html" %}
 
 {% block content %}
+<script type="module" src="{{ url_for('static', filename='js/quiz.js') }}"></script>
 <h1>NU Group Project</h1>
 <p class="lead">Flask is up and running.</p>
+<p id="test_field"> 1st Page </p>
+<button id="test_button"> Click </button>
 {% endblock %}
