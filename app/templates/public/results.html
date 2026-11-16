@@ -1,0 +1,51 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+  <nav class="navbar navbar-expand-lg app-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">AI Awareness</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <div class="w-content-sm mx-auto">
+      <header class="text-center mt-lg-4 mb-5">
+        <h1 class="page-title mb-3">Quiz Complete!</h1>
+        <p class="fs-18 text-secondary-ink mb-0">Here’s how you performed on responsible AI sharing.</p>
+      </header>
+
+      <section class="panel text-center px-4 py-4 mb-4">
+        <p class="score-value mb-3"><span id="scoreValue">23</span>/30</p>
+        <p class="fs-4 fw-semibold text-band-warn mb-3" id="scoreBandLabel">Developing Awareness</p>
+        <p class="text-secondary-ink mx-auto mb-1" id="scoreBandText" style="max-width: 520px;">You have a good understanding of responsible AI use, but there are some areas where you could improve</p>
+      </section>
+
+      <h2 class="fs-20 fw-semibold mb-3">Understanding your score</h2>
+      <div class="d-grid gap-2 mb-5">
+        <div class="score-band band-good" data-min="25" data-max="30"><span>25-30</span><span>Strong Awareness</span><span></span></div>
+        <div class="score-band band-warn" data-min="15" data-max="24"><span>15-24</span><span>Developing Awareness</span><span></span></div>
+        <div class="score-band band-bad"  data-min="0"  data-max="14"><span>0-14</span><span>Needs Improvement</span><span></span></div>
+      </div>
+
+      <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-4">
+        <a href="leaderboard.html" class="btn btn-primary btn-wide">View Leaderboard</a>
+        <a href="index.html" class="btn btn-outline-primary btn-wide">Return Home</a>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="{{ url_for('static', filename='js/results.js') }}"></script>
+
+
+{% endblock %}

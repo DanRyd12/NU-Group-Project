@@ -1,0 +1,100 @@
+{% extends "template.html" %}
+
+{% block title %}Admin · NU Group Project{% endblock %}
+
+{% block content %}
+  <nav class="navbar navbar-expand-lg app-navbar admin">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">AI Awareness</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNav" aria-controls="adminNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="adminNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="admin-scenarios.html">Scenarios</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin-login.html">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <div class="w-content-lg mx-auto">
+      <header class="mt-lg-4 mb-4">
+        <h1 class="page-title mb-3">Scenario Management</h1>
+        <p class="fs-18 text-secondary-ink mb-0">Add, edit or delete scenarios used in the quiz.</p>
+      </header>
+
+      <a href="admin-add-scenario.html" class="btn btn-primary btn-add mb-4">+ Add Scenario</a>
+
+      <div class="table-responsive">
+        <table class="table row-table scenario-table">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 85px;">ID</th>
+              <th scope="col">Scenario</th>
+              <th scope="col" class="col-action">Edit</th>
+              <th scope="col" class="col-action">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="scenarioRows">
+            <tr>
+              <td>001</td><td>Sharing personal data with AI</td>
+              <td><a class="link-edit" href="admin-edit-scenario.html?id=001">Edit</a></td>
+              <td><button type="button" class="link-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="001">Delete</button></td>
+            </tr>
+            <tr>
+              <td>002</td><td>Using unapproved AI tools</td>
+              <td><a class="link-edit" href="admin-edit-scenario.html?id=002">Edit</a></td>
+              <td><button type="button" class="link-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="002">Delete</button></td>
+            </tr>
+            <tr>
+              <td>003</td><td>Sharing passwords or credentials</td>
+              <td><a class="link-edit" href="admin-edit-scenario.html?id=003">Edit</a></td>
+              <td><button type="button" class="link-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="003">Delete</button></td>
+            </tr>
+            <tr>
+              <td>004</td><td>Uploading confidential documents</td>
+              <td><a class="link-edit" href="admin-edit-scenario.html?id=004">Edit</a></td>
+              <td><button type="button" class="link-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="004">Delete</button></td>
+            </tr>
+            <tr>
+              <td>005</td><td>Sharing private source code</td>
+              <td><a class="link-edit" href="admin-edit-scenario.html?id=005">Edit</a></td>
+              <td><button type="button" class="link-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="005">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Delete confirmation (Figma 09) -->
+  <div class="modal fade modal-confirm" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px;">
+      <div class="modal-content">
+        <h2 class="modal-title fs-3 fw-bold text-ink mb-4" id="deleteModalTitle">Delete Scenario?</h2>
+        <p class="fs-18 fw-semibold text-secondary-ink mb-4">Are you sure you want to delete this scenario? This action cannot be undone.</p>
+        <div class="d-flex flex-column flex-sm-row justify-content-between gap-3">
+          <button type="button" class="btn btn-danger btn-form" id="confirmDelete" style="height: 55px;">Delete Scenario</button>
+          <button type="button" class="btn btn-outline-primary btn-form" data-bs-dismiss="modal" style="height: 55px;">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Front-end demo: removes the row. Replace with a call to back end or whatever.
+    (function () {
+      const modalEl = document.getElementById('deleteModal');
+      let pendingRow = null;
+      modalEl.addEventListener('show.bs.modal', (e) => {
+        pendingRow = e.relatedTarget ? e.relatedTarget.closest('tr') : null;
+      });
+      document.getElementById('confirmDelete').addEventListener('click', () => {
+        if (pendingRow) pendingRow.remove();
+        bootstrap.Modal.getInstance(modalEl).hide();
+      });
+    })();
+  </script>
+{% endblock %}

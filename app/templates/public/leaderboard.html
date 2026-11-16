@@ -1,0 +1,56 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+  <nav class="navbar navbar-expand-lg app-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">AI Awareness</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="leaderboard.html">Leaderboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <div class="w-content-lg mx-auto">
+      <header class="text-center mt-lg-4 mb-5">
+        <h1 class="page-title mb-3">Team Leaderboard</h1>
+        <p class="fs-18 text-secondary-ink mb-0">Compare average scores across participating teams.</p>
+      </header>
+
+      <div class="table-responsive">
+        <table class="table row-table leaderboard-table mb-2">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 22%;">Rank</th>
+              <th scope="col">Team</th>
+              <th scope="col" style="width: 27%;">Average Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Team Alpha</td><td>27.5/30</td></tr>
+            <tr><td>2</td><td>Team Beta</td><td>25.2/30</td></tr>
+            <tr><td>3</td><td>Team Gamma</td><td>22.8/30</td></tr>
+            <tr><td>4</td><td>Team Delta</td><td>19.6/30</td></tr>
+            <tr><td>5</td><td>Team Epsilon</td><td>16.4/30</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-center text-secondary-ink mb-0">Scores represent team averages. Individual results are not displayed.</p>
+
+      <div class="text-center mt-5 pt-4">
+        <a href="index.html" class="btn btn-primary btn-wide">Return Home</a>
+      </div>
+    </div>
+  </main>
+
+
+{% endblock %}

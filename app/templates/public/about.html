@@ -1,0 +1,50 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+  <nav class="navbar navbar-expand-lg app-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">AI Awareness</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <div class="w-content-about mx-auto">
+      <header class="text-center mb-4">
+        <h1 class="page-title mb-3">About This Quiz</h1>
+        <p class="fs-18 text-secondary-ink mb-0">Learn how to use AI tools responsibly and protect your information.</p>
+      </header>
+
+      <section class="panel-soft px-4 px-md-5 py-4 mb-3">
+        <h2 class="question-title mb-3">What is this quiz?</h2>
+        <p class="fs-18 mb-0">This quiz helps students recognise when sharing information with AI tools could create privacy or security risks. It uses everyday scenarios to encourage safer decisions.</p>
+      </section>
+
+      <section class="panel-soft px-4 px-md-5 py-4 mb-3">
+        <h2 class="question-title mb-3">How does scoring work?</h2>
+        <p class="fs-18 mb-0">You will answer 10 questions, with three options for each. Answers are worth 0, 1 or 3 points depending on the level of risk. Your final score is out of 30, with feedback explaining each answer.</p>
+      </section>
+
+      <section class="panel-soft px-4 px-md-5 py-4">
+        <h2 class="question-title mb-3">Is the quiz anonymous?</h2>
+        <p class="fs-18 mb-0">Yes. You do not need to provide your name or personal details. Results are associated with an assigned team identifier, and the leaderboard displays team averages rather than individual scores.</p>
+      </section>
+
+      <div class="text-center mt-5 pt-4">
+        <a href="quiz.html" class="btn btn-primary btn-wide">Start Quiz</a>
+      </div>
+    </div>
+  </main>
+
+
+{% endblock %}

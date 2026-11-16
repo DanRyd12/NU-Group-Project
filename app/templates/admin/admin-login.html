@@ -1,0 +1,36 @@
+{% extends "template.html" %}
+
+{% block title %}Admin · NU Group Project{% endblock %}
+
+{% block content %}
+  <nav class="navbar app-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">AI Awareness</a>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <div class="w-content-login mx-auto">
+      <header class="text-center mt-lg-5 mb-5">
+        <h1 class="page-title mb-4">Admin Login</h1>
+        <p class="fs-18 text-secondary-ink mb-0">Sign in for admin access</p>
+      </header>
+
+      <!-- Front-end only: wire the action up to your server-side authentication. -->
+      <form class="panel px-4 px-sm-5 pt-4 pb-4" action="admin-scenarios.html" method="get">
+        <div class="mb-3 pt-2">
+          <label for="username" class="form-label form-label-strong">Username</label>
+          <input type="text" class="form-control form-control-tall login-input" id="username" name="username" placeholder="Enter Username" autocomplete="username" required>
+        </div>
+        <div class="mb-4">
+          <label for="password" class="form-label form-label-strong">Password</label>
+          <input type="password" class="form-control form-control-tall login-input" id="password" name="password" placeholder="Enter Password" autocomplete="current-password" required>
+        </div>
+        <div class="text-center pb-1">
+          <button type="submit" class="btn btn-primary btn-login">Login</button>
+        </div>
+      </form>
+    </div>
+  </main>
+{% endblock %}
+

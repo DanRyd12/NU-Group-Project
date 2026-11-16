@@ -1,0 +1,74 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+  <nav class="navbar navbar-expand-lg app-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">AI Awareness</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <form id="quizForm" class="w-content-md mx-auto mt-lg-4" novalidate>
+
+      <p class="fs-20 fw-semibold mb-4" id="questionCounter">Question 1 of 10</p>
+      <div class="progress quiz-progress mb-5" role="progressbar" aria-label="Quiz progress" aria-valuenow="1" aria-valuemin="0" aria-valuemax="10">
+        <div class="progress-bar" id="progressBar" style="width: 10%"></div>
+      </div>
+
+      <fieldset id="answerGroup">
+        <legend class="question-title text-ink mb-3" id="questionText">You want AI to improve your CV. What should you do before sharing it?</legend>
+        <p class="fs-18 text-secondary-ink mb-5" id="questionContext">Your CV contains your full name, contact details and employment history.</p>
+
+        <div class="d-grid gap-3" id="answerList">
+          <!-- Answer options rendered by js/quiz.js. Static fallback below matches the design. -->
+          <label class="answer-option">
+            <input type="radio" name="answer" value="0">
+            <span class="answer-card">
+              <span>A. Upload the CV exactly as it is.</span>
+              <img class="answer-indicator" src="assets/img/selection-indicator.svg" width="21" height="21" alt="">
+            </span>
+          </label>
+          <label class="answer-option">
+            <input type="radio" name="answer" value="1">
+            <span class="answer-card">
+              <span>B. Remove unnecessary personal details.</span>
+              <img class="answer-indicator" src="assets/img/selection-indicator.svg" width="21" height="21" alt="">
+            </span>
+          </label>
+          <label class="answer-option">
+            <input type="radio" name="answer" value="2">
+            <span class="answer-card">
+              <span>C. Share the CV using a different AI account.</span>
+              <img class="answer-indicator" src="assets/img/selection-indicator.svg" width="21" height="21" alt="">
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Feedback (hidden until an answer is submitted) -->
+      <div class="feedback-box mt-4 d-none" id="feedbackBox" role="status" aria-live="polite">
+        <p class="feedback-title" id="feedbackTitle"></p>
+        <p id="feedbackText"></p>
+      </div>
+
+      <div class="text-center mt-5">
+        <button type="submit" class="btn btn-primary btn-xl" id="submitBtn" disabled>Submit Answer</button>
+        <button type="button" class="btn btn-primary btn-xl d-none" id="nextBtn">Next Question</button>
+      </div>
+    </form>
+  </main>
+
+  <script type="module" src="{{ url_for('static', filename='js/tempquiz.js') }}"></script>
+
+{% endblock %}
