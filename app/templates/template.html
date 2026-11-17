@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}NU Group Project{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/example.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cs-styles.css') }}">
 </head>
 <body>
@@ -14,7 +12,6 @@
         {% block content %}{% endblock %}
     </main>
     <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script type="module" src="{{ url_for('static', filename='js/example.js') }}"></script>
     {% block scripts %}{% endblock %}
 </body>
 </html>

@@ -131,7 +131,7 @@
   };
 
   const LETTERS = ['A', 'B', 'C'];
-  const INDICATOR_SRC = 'assets/img/selection-indicator.svg';
+  const INDICATOR_SRC = '/static/assets/selection-indicator.svg';
 
   const form = document.getElementById('quizForm');
   const counter = document.getElementById('questionCounter');

@@ -2,21 +2,7 @@
 
 {% block content %}
 
-  <nav class="navbar navbar-expand-lg app-navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">AI Awareness</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="leaderboard.html">Leaderboard</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+{% include "partials/navbar_public.html" %}
 
   <main class="container py-5">
     <div class="w-content-lg mx-auto">
@@ -29,9 +15,9 @@
         <table class="table row-table leaderboard-table mb-2">
           <thead>
             <tr>
-              <th scope="col" style="width: 22%;">Rank</th>
+              <th scope="col overridecsp-width22pc" >Rank</th>
               <th scope="col">Team</th>
-              <th scope="col" style="width: 27%;">Average Score</th>
+              <th scope="col overridecsp-width27pc" >Average Score</th>
             </tr>
           </thead>
           <tbody>
@@ -47,7 +33,7 @@
       <p class="text-center text-secondary-ink mb-0">Scores represent team averages. Individual results are not displayed.</p>
 
       <div class="text-center mt-5 pt-4">
-        <a href="index.html" class="btn btn-primary btn-wide">Return Home</a>
+        <a href="{{ url_for('public.index') }}" class="btn btn-primary btn-wide">Return Home</a>
       </div>
     </div>
   </main>
