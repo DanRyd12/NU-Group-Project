@@ -271,3 +271,19 @@ textarea.form-field { min-height: 100px; padding-top: 18px; }
 .form-control, .form-select { background-color: #fff; }
 .modal { --bs-modal-bg: #fff; }
 
+/* Additional CSS Overrides - declared to avoid CSP blocking inline styles */
+.overridecsp-height90 {
+  min-height: 90px;
+}
+
+.overridecsp-width22pc {
+  width: 22%;
+}
+
+.overridecsp-width27pc {
+  width: 27%;
+}
+
+.overridecsp-width10pc {
+  width: 10%;
+}

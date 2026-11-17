@@ -1,35 +1,20 @@
 {% extends "template.html" %}
 
 {% block content %}
-  <nav class="navbar navbar-expand-lg app-navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">AI Awareness</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+{% include "partials/navbar_public.html" %}
   <main class="container text-center py-5">
     <div class="mx-auto pt-lg-5">
       <h1 class="display-hero mt-lg-5 mb-4">Are you sharing too much with AI?</h1>
       <p class="fs-20 fw-semibold text-secondary-ink mb-5">Test your knowledge of responsible AI use.</p>
 
       <div class="panel w-content-sm mx-auto mb-5">
-        <div class="d-flex justify-content-between align-items-center px-5" style="min-height: 90px;">
+        <div class="d-flex justify-content-between align-items-center px-5 overridecsp-height90">
           <span class="fs-18 fw-medium">10 Questions</span>
           <span class="fs-18 fw-medium">Anonymous</span>
         </div>
       </div>
 
-      <a href="quiz.html" class="btn btn-primary btn-cta mt-3">Start Quiz</a>
+      <a href="{{ url_for('public.quiz') }}" class="btn btn-primary btn-cta mt-3">Start Quiz</a>
 
       <p class="text-secondary-ink mt-4 mb-0">Your answers are anonymous. No personal information is required.</p>
     </div>
