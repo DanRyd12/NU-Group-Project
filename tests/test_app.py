@@ -20,6 +20,17 @@ def test_api(client):
     response = client.get("/api/test")
     assert response.get_json() == {"status": "ok"}
 
-
+# Try to access admin page without authorisation
 def test_admin_requires_login(client):
     assert client.get("/admin/").status_code == 401
+
+# Correct Login details
+def test_admin_login(client):
+    x = "placeholder"
+
+# Incorrect Login details
+def test_admin_garbage_login(client):
+    y = "placeholder"
+
+def test_admin_access(client):
+    z = "placeholder"
